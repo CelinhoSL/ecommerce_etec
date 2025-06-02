@@ -1,0 +1,120 @@
+/* Estilos da Sidebar/Navbar Responsiva */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100vh;
+    background: #343a40;
+    transition: left 0.3s ease;
+    z-index: 1050;
+    overflow-y: auto;
+}
+
+.sidebar.show {
+    left: 0;
+}
+
+.sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1040;
+    display: none;
+}
+
+.sidebar-overlay.show {
+    display: block;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    color: #007bff !important;
+}
+
+.main-content {
+    margin-left: 0;
+    transition: margin-left 0.3s ease;
+    min-height: 100vh;
+}
+
+/* Estilo padrão da sidebar */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px; /* Escondida inicialmente no mobile */
+    width: 250px;
+    height: 100vh;
+    background-color: #343a40;
+    color: #fff;
+    z-index: 1050;
+    transition: left 0.3s ease;
+    overflow-y: auto;
+}
+
+/* Quando a sidebar está aberta no mobile */
+.sidebar.show {
+    left: 0;
+}
+
+/* Overlay escuro no fundo no mobile */
+.sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1040;
+    display: none;
+}
+
+.sidebar-overlay.active {
+    display: block;
+}
+
+/* Conteúdo principal */
+.main-content {
+    padding: 20px;
+    transition: margin-left 0.3s ease;
+}
+
+.sidebar .nav-link {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Espaço entre o ícone e o texto */
+    padding: 10px 20px;
+    color: #fff;
+    text-decoration: none;
+    transition: background 0.2s;
+}
+
+.sidebar .nav-link:hover {
+    background-color: #495057;
+    text-decoration: none;
+}
+
+/* Media query para telas grandes */
+@media (min-width: 992px) {
+    .sidebar {
+        position: fixed;
+        left: 0;
+        width: 250px;
+        height: 100vh;
+    }
+
+    .main-content {
+        margin-left: 250px;
+    }
+
+    .sidebar-overlay {
+        display: none !important;
+    }
+
+    .navbar-toggler {
+        display: none !important;
+    }
+}
